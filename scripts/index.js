@@ -17,6 +17,7 @@ function createCard(i, func) {
   .cloneNode(true);
   placeElement.querySelector(".card__title").textContent = i.name;
   placeElement.querySelector(".card__image").src = i.link;
+  placeElement.querySelector(".card__image").alt = i.name;
   placeElement.querySelector(".card__delete-button").addEventListener('click', func);
   return placeElement;
 };
