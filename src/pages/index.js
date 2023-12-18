@@ -2,6 +2,7 @@ import './index.css';
 import { initialCards } from '../components/cards.js';
 import { createCard, deleteCard, toLike } from '../components/card.js';
 import { openPopup, closePopup, closePopupOverlay } from '../components/modal.js';
+import { useClass, enableValidation, clearValidation } from '../components/validation.js';
 
 const placesContainer = document.querySelector(".places__list");
 export const popUps = document.querySelectorAll(".popup");
@@ -65,10 +66,14 @@ buttonOpenPopupProfile.addEventListener('click', function() {
   fieldNameFormProfile.value = profileName.textContent;
   fieldJobFormProfile.value = profileJob.textContent;
   openPopup(popupProfile);
+  clearValidation(formProfile, useClass);
 });
 
 buttonOpenPopupAddNewCard.addEventListener('click', function() {
+  fieldNameFormAddNewCard.value = '';
+  fieldLinkFormAddNewCard.value = '';
   openPopup(popupAddNewCard);
+  clearValidation(formAddNewCard, useClass);
 });
 
 //обработчики клика закрытия модальных окон
@@ -80,7 +85,10 @@ allButtonsClosePopup.forEach((button) => {
 popUps.forEach((item) => {
   item.addEventListener ('click', (evt) => {
     if (evt.currentTarget === evt.target) {
-      closePopupOverlay(item)
+      closePopupOverlay(item);
     }
   })
 })
+
+//включение проверки валидности всем формам
+enableValidation(useClass);
