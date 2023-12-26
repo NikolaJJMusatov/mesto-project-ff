@@ -31,18 +31,27 @@
 
 .input-container {
   display: flex;
+
   flex-direction: column;
-  min-height: 124px;
-  margin-bottom: 7px;
+  /*min-height: 144px;*/
+  margin-bottom: 10px;
+}
+
+.input-container-min {
+  margin-bottom: 12px;
+}
+
+.label {
+  position: relative;
+  min-height: 62px;
 }
 
 @media screen and (max-width: 568px) {
   .input-container {
     margin-bottom: 0;
   }
-}
 
-.label {
-  position: relative;
-  min-height: 62px;
+  .input-container-min {
+    margin-bottom: 12px;
+  }
 }
