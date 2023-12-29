@@ -23,9 +23,6 @@ export const getUserInfo = () => {
     headers: configFetch.headers
   })
   .then(getRes)
-  .catch((err) => {
-    console.log(err);
-  })
 };
 
 //получение карточек с сервера
@@ -34,9 +31,6 @@ export const getInitialCards = () => {
     headers: configFetch.headers
   })
   .then(getRes)
-  .catch((err) => {
-    console.log(err);
-  })
 };
 
 //редактирование профиля на сервере
@@ -50,9 +44,6 @@ export const setUserInfo = (name, about) => {
     })
   })
   .then(getRes)
-  .catch((err) => {
-    console.log(err);
-  })
 };
 
 //добавление новой карточки на сервер
@@ -66,9 +57,6 @@ export const loadNewCard = (name, link) => {
     })
   })
   .then(getRes)
-  .catch((err) => {
-    console.log(err);
-  })
 };
 
 //удаление карточки с сервера, которую добавил пользователь
@@ -78,13 +66,10 @@ export const deleteCardUserId = (cardId) => {
     headers: configFetch.headers
   })
   .then(getRes)
-  .catch((err) => {
-    console.log(err);
-  })
 };
 
 //постановка лайка
-export const madeLike = (cardId, like) => {
+export const makeLike = (cardId, like) => {
   let method = like ? 'DELETE' : 'PUT';
 
   return fetch(`${configFetch.baseUrl}/cards/likes/${cardId}`, {
@@ -92,9 +77,6 @@ export const madeLike = (cardId, like) => {
     headers: configFetch.headers
   })
     .then(getRes)
-    .catch((err) => {
-      console.log(err);
-    })
 };
 
 //изменение аватара на сервере
@@ -107,7 +89,4 @@ export const setUserAvatar = (avatarLink) => {
     })
   })
     .then(getRes)
-    .catch((err) => {
-      console.log(err);
-    })
 };

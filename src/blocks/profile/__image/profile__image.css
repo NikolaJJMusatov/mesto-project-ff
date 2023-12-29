@@ -1,6 +1,7 @@
 .profile__image {
   width: 120px;
   height: 120px;
+  border: none;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -10,6 +11,8 @@
   background-repeat: no-repeat;
   margin: 0 29px 0 0;
   position: relative;
+  padding: 0;
+  background-color: transparent;
 }
 
 .profile__image::before {
