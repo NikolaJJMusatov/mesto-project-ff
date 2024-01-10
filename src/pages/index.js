@@ -34,7 +34,7 @@ const formAddNewCard = document.forms["new-place"];
 const fieldNameFormAddNewCard = formAddNewCard.elements["place-name"];
 const fieldLinkFormAddNewCard = formAddNewCard.elements["link"];
 const buttonSubmitPopupAddNewCard = formAddNewCard.querySelector(".button");
-//Переменная id пользователя
+//Переменные пользователя
 let userId;
 //Массив валидации форм
 const validationConfig = {
